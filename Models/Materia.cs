@@ -16,11 +16,11 @@ namespace AdministracionEscolar.Models
         [Column("INSTRUCTOR", TypeName = "NVARCHAR(100)")]
         public string Instructor { get; set; } = null!;
 
-        [Column("HORA_INICIO", TypeName = "TIME")]
-        public TimeOnly HoraInicio { get; set; }
+        [Column("HORA_INICIO", TypeName = "NVARCHAR(10)")]
+        public string HoraInicio { get; set; } = null!;
 
-        [Column("HORA_Fin", TypeName = "TIME")]
-        public TimeOnly HoraFin { get; set; }
+        [Column("HORA_Fin", TypeName = "NVARCHAR(10)")]
+        public string HoraFin { get; set; } = null!;
 
         [Column("UBICACION", TypeName = "NVARCHAR(100)")]
         public string Ubicacion { get; set; } = null!;

@@ -10,9 +10,9 @@ namespace AdministracionEscolar.BussinessModels
         public DateTime FechaNacimiento { get; set; }
         public int Edad { get; set; }
         public string Correo { get; set; } = null!;
-        public string Estado { get; set; } = null!;
-        public string UsuCrea { get; set; } = null!;
-        public DateTime FecCrea { get; set; }
+        public string? Estado { get; set; }
+        public string? UsuCrea { get; set; }
+        public DateTime? FecCrea { get; set; }
         public string? UsuMod { get; set; }
         public DateTime? FecMod { get; set; }
         public string? UsuBlo { get; set; }
