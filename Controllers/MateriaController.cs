@@ -144,7 +144,7 @@ namespace AdministracionEscolar.Controllers
         [HttpPut("{codigoMateria}", Name = "ActualizarMateria")]
         public IActionResult ActualizarMateria(string codigoMateria, [FromBody] BMateria materia)
         {
-            if (codigoMateria.IsNullOrEmpty())
+            if (codigoMateria.IsNullOrEmpty() || codigoMateria != materia.Codigo)
             {
                 return NotFound();
             }
@@ -156,11 +156,13 @@ namespace AdministracionEscolar.Controllers
                 return NotFound();
             }
 
-            materia.Estado = registro.Estado;
-            materia.FecCrea = registro.FecCrea;
-            materia.UsuCrea = registro.UsuCrea;
-
-            registro = Helpers.BMateriaToMateria(materia, _usuario, true);
+            registro.Nombre = materia.Nombre;
+            registro.Ubicacion = materia.Ubicacion;
+            registro.Instructor = materia.Instructor;
+            registro.HoraInicio = materia.HoraInicio;
+            registro.HoraFin = materia.HoraFin;
+            registro.UsuMod = _usuario;
+            registro.FecMod = DateTime.Now;
 
             try
             {

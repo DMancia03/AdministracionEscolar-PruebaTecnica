@@ -94,7 +94,7 @@ namespace AdministracionEscolar.Controllers
 
                 return Ok(estudiante);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
@@ -116,18 +116,20 @@ namespace AdministracionEscolar.Controllers
                 return NotFound();
             }
 
-            estudiante.Estado = registro.Estado;
-            estudiante.FecCrea = registro.FecCrea;
-            estudiante.UsuCrea = registro.UsuCrea;
-
-            registro = Helpers.BEstudianteToEstudiante(estudiante, _usuario, true);
+            registro.Nombres = estudiante.Nombres;
+            registro.Apellidos = estudiante.Apellidos;
+            registro.FechaNacimiento = estudiante.FechaNacimiento;
+            registro.Edad = estudiante.Edad;
+            registro.Codigo = estudiante.Correo;
+            registro.UsuMod = _usuario;
+            registro.FecMod = DateTime.Now;
 
             try
             {
                 _db.Estudiantes.Update(registro);
                 _db.SaveChanges();
 
-                return Ok(registro);
+                return Ok(estudiante);
             }
             catch(Exception ex)
             {

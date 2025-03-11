@@ -11,7 +11,7 @@ namespace AdministracionEscolar.Comunes
             {
                 return new Estudiante
                 {
-                    //Codigo = entity.Codigo,
+                    Codigo = entity.Codigo,
                     Nombres = entity.Nombres,
                     Apellidos = entity.Apellidos,
                     FechaNacimiento = entity.FechaNacimiento,
@@ -53,7 +53,7 @@ namespace AdministracionEscolar.Comunes
             {
                 return new Materia
                 {
-                    //Codigo = materia.Codigo,
+                    Codigo = materia.Codigo,
                     Nombre = materia.Nombre,
                     Instructor = materia.Instructor,
                     HoraInicio = materia.HoraInicio,
