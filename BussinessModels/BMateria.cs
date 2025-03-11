@@ -19,4 +19,3 @@ namespace AdministracionEscolar.BussinessModels
         public DateTime? FecBlo { get; set; }
     }
 }
-}
