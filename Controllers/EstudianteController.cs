@@ -120,7 +120,7 @@ namespace AdministracionEscolar.Controllers
             registro.Apellidos = estudiante.Apellidos;
             registro.FechaNacimiento = estudiante.FechaNacimiento;
             registro.Edad = estudiante.Edad;
-            registro.Codigo = estudiante.Correo;
+            registro.Correo = estudiante.Correo;
             registro.UsuMod = _usuario;
             registro.FecMod = DateTime.Now;
 
